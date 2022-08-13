@@ -24,7 +24,7 @@ class Clock extends React.Component {
     const minsDegrees = ((mins / 60) * 360) + 90
     this.setState({minsDegrees});
     const hour = now.getHours();
-    const hourDegrees = ((hour / 12) * 360) + 90
+    const hourDegrees = ((hour / 12) * 360) + 90+((mins/60)*30);
     this.setState({hourDegrees});
   }
   render() {
@@ -49,6 +49,7 @@ class Clock extends React.Component {
             style={{transform: `rotate(${this.state.secondsDegrees}deg)`}}
 
             ></div>
+            <div className="dot"></div>
         </div>
     </div>
       </div>
